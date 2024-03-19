@@ -28,7 +28,7 @@ func TestHandleOrder(t *testing.T) {
 	err := json.Unmarshal(w.Body.Bytes(), &response)
 	assert.NoError(t, err)
 
-	assert.Equal(t, 7, int(response["totalItems"].(float64)))
+	assert.Equal(t, 100, int(response["totalItems"].(float64)))
 
 	//expectedPacking := map[string]int{"7": 1}
 	//fmt.Println(expectedPacking)

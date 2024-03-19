@@ -15,7 +15,7 @@ func main() {
 	router := gin.Default()
 	router.POST("/order", handleOrder)
 
-	router.Run("localhost:8080")
+	router.Run(":4040")
 }
 
 // POST /order

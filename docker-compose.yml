@@ -1,0 +1,15 @@
+version: '3'
+services:
+  webapp:
+    container_name: webapp
+    build: ./web
+    restart: always
+    ports:
+      - '80:80'
+    links:
+      - server
+  server:
+    container_name: backend
+    build: .
+    ports:
+      - "4040:4040"

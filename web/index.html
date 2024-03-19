@@ -18,6 +18,7 @@
         <input type="text" placeholder="Quantity" id="quantity" />
     </label>
     <button onclick="order()">Order</button>
+
     <div id="alert-box"></div>
     <div id="packs"></div>
 </div>
@@ -32,7 +33,7 @@
         $("#alert-box").hide();
 
         $.post({
-            url: 'http://localhost:8080/order',
+            url: 'http://localhost:4040/order',
             method: 'POST',
             data: `{ "quantity": ${quantity} }`,
             dataType: "json",
