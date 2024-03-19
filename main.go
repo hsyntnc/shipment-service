@@ -20,6 +20,8 @@ func main() {
 
 // POST /order
 func handleOrder(c *gin.Context) {
+	c.Writer.Header().Set("Access-Control-Allow-Origin", "*")
+
 	var orderReq OrderRequest
 
 	if err := c.BindJSON(&orderReq); err != nil {

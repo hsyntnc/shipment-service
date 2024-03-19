@@ -3,7 +3,7 @@ package order
 import "math"
 
 // Declare pack sizes
-var packSizes = []int{5, 7, 9}
+var packSizes = []int{100, 200, 500}
 
 func FullFillOrder(amount int) (int, map[int]int) {
 	// Initialize DP arrays for the minimum packs and for tracking the packs used

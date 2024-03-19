@@ -16,23 +16,26 @@ func TestFullFillOrder(t *testing.T) {
 		{
 			name:                "Exact order possible",
 			quantity:            32,
-			packSizes:           []int{5, 7, 9},
 			expectedCombination: map[int]int{5: 1, 9: 3},
 			expectedTotal:       32,
 		},
 		{
 			name:                "Exact change is not possible, find closest.",
 			quantity:            13,
-			packSizes:           []int{5, 7, 9},
 			expectedCombination: map[int]int{5: 1, 9: 1},
 			expectedTotal:       14,
 		},
 		{
-			name:                "Exact change, single pack option",
-			quantity:            26,
-			packSizes:           []int{7},
-			expectedCombination: map[int]int{7: 4},
-			expectedTotal:       28,
+			name:                "With thousands of orders",
+			quantity:            500000,
+			expectedCombination: map[int]int{9: 55555, 5: 1},
+			expectedTotal:       500000,
+		},
+		{
+			name:                "With 1 single order",
+			quantity:            1,
+			expectedCombination: map[int]int{5: 1},
+			expectedTotal:       5,
 		},
 	}
 
